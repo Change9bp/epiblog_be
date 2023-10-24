@@ -5,7 +5,6 @@ const postRoute = require("./routes/posts");
 const commentRoute = require("./routes/comments");
 const emailRoute = require("./routes/sendEmail");
 const loginRoute = require("./routes/login");
-//const githubRoute = require("./routes/github");
 const gitRoute = require("./routes/github");
 const cors = require("cors");
 const path = require("path");
@@ -23,7 +22,6 @@ app.use("/", postRoute);
 app.use("/", commentRoute);
 app.use("/", emailRoute);
 app.use("/", loginRoute);
-//app.use("/", githubRoute);
 app.use("/", gitRoute);
 
 mongoose.connect(

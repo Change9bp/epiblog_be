@@ -158,7 +158,7 @@ comment.delete(
       });
     }
     try {
-      const commentToDelete = await PostModel.findByIdAndDelete(idComment);
+      const commentToDelete = await CommentModel.findByIdAndDelete(idComment);
 
       res.status(200).send({
         statusCode: 200,
