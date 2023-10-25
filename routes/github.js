@@ -46,7 +46,7 @@ gh.get(
   "/auth/github",
   passport.authenticate("github", { scope: ["user:email"] }),
   (req, res) => {
-    const redirectUrl = `http://localhost:3000/success/${encodeURIComponent(
+    const redirectUrl = `https://fantastic-pasca-0f9d79.netlify.app/success/${encodeURIComponent(
       JSON.sringify(req.user)
     )}`;
     res.redirect(redirectUrl);
@@ -59,7 +59,7 @@ gh.get(
   (req, res) => {
     const user = req.user;
     const token = jwt.sign(user, process.env.GITHUB_CALLBACK_URL);
-    const redirectUrl = `http://localhost:3000/success/${encodeURIComponent(
+    const redirectUrl = `https://fantastic-pasca-0f9d79.netlify.app/success/${encodeURIComponent(
       token
     )}`;
     res.redirect(redirectUrl);
@@ -67,7 +67,7 @@ gh.get(
 );
 
 gh.get("/success", (req, res) => {
-  res.redirect(`http://localhost:3000/home`);
+  res.redirect(`https://fantastic-pasca-0f9d79.netlify.app/home`);
 });
 
 module.exports = gh;
